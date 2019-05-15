@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teachify.Pages.BecomeInstructorPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="Become An Instructor" FontSize="Large" HorizontalOptions="Center"/>
+                <Image x:Name="ImgProfile" Source="placeholderhead.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapCamera" Tapped="TapCamera_OnTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Entry Placeholder="Name" x:Name="EntName"/>
+                <Entry Placeholder="Language" x:Name="EntLanguage"/>
+                <Entry Placeholder="Nationality" x:Name="EntNationality"/>
+                <Picker x:Name="PickerGender" Title="Gender">
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                        <x:String>Others</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry Placeholder="Phone" x:Name="EntPhone"/>
+                <Entry Placeholder="Email" x:Name="EntEmail"/>
+                <Entry Placeholder="Education" x:Name="EntEducation"/>
+                <Picker x:Name="PickerExperience" Title="Experience">
+                    <Picker.Items>
+                        <x:String>1 Year</x:String>
+                        <x:String>2 Years</x:String>
+                        <x:String>3 Years</x:String>
+                        <x:String>4 Years</x:String>
+                        <x:String>5+ Years</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="PickerHourlyRate" Title="Hourly Rate">
+                    <Picker.Items>
+                        <x:String>$5</x:String>
+                        <x:String>$10</x:String>
+                        <x:String>$15</x:String>
+                        <x:String>$20</x:String>
+                        <x:String>$25</x:String>
+                        <x:String>$30</x:String>
+                        <x:String>$35</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="PickerCourseDomain" Title="Course Domain">
+                    <Picker.Items>
+                        <x:String>Accounting</x:String>
+                        <x:String>Arts</x:String>
+                        <x:String>Biological Science</x:String>
+                        <x:String>Chemistry</x:String>
+                        <x:String>Computer Science</x:String>
+                        <x:String>Dentistry</x:String>
+                        <x:String>Forensic Science</x:String>
+                        <x:String>Medicine</x:String>
+                        <x:String>Philosophy</x:String>
+                        <x:String>Physics</x:String>
+                        <x:String>Sociology</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="PickerCity" Title="City">
+                    <Picker.Items>
+                        <x:String>Alabama</x:String>
+                        <x:String>Alaska</x:String>
+                        <x:String>California</x:String>
+                        <x:String>Florida</x:String>
+                        <x:String>Georgia</x:String>
+                        <x:String>Indiana</x:String>
+                        <x:String>Louisiana</x:String>
+                        <x:String>Mississippi</x:String>
+                        <x:String>New Mexico</x:String>
+                        <x:String>New York</x:String>
+                        <x:String>Pennsylvania</x:String>
+                        <x:String>Seattle</x:String>
+                        <x:String>Texas</x:String>
+                        <x:String>Washington</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="EntOneLineTitle" Placeholder="Short Title"/>
+                <Editor Placeholder="Description" x:Name="EdtDescription" HeightRequest="100"/>
+                <Button TextColor="White" BackgroundColor="#FF9F00" Text="Apply" x:Name="BtnApply" Clicked="BtnApply_OnClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

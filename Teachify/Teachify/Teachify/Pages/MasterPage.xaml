@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Teachify.Pages;assembly=Teachify"
+             x:Class="Teachify.Pages.MasterPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master">
+
+            <StackLayout>
+                <Grid>
+                    <BoxView BackgroundColor="#ee0290" HeightRequest="150"/>
+                    <Label Text="Welcome to Teachify" TextColor="White" FontSize="Medium" Margin="15,75,0,0"/>
+                </Grid>
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="home.png"/>
+                    <Label Text="Home" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapHome" Tapped="TapHome_OnTapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="changepassword.png"/>
+                    <Label Text="Change Password" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapChangePassword" Tapped="TapChangePassword_OnTapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="instructor.png"/>
+                    <Label Text="Become an Instructor" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBecomeInstructor" Tapped="TapBecomeInstructor_OnTapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="faq.png"/>
+                    <Label Text="FAQ" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapFaq" Tapped="TapFaq_OnTapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="logout.png"/>
+                    <Label Text="Logout" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapLogout" Tapped="TapLogout_OnTapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:HomePage></pages:HomePage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

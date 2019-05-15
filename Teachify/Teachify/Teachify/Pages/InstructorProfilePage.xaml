@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="Teachify.Pages.InstructorProfilePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="#340E22">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <!--<Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="ImgProfile"/>-->
+                <forms:CachedImage x:Name="ImgProfile" LoadingPlaceholder="placeholder.jpg" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                   DownsampleToViewSize="true"
+                                   Source="{Binding FullLogoPath}" CacheType="All">
+                    <forms:CachedImage.Transformations>
+                        <transformations:CircleTransformation />
+                    </forms:CachedImage.Transformations>
+                </forms:CachedImage>
+                <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="Medium" TextColor="White" x:Name="LblName"/>
+                <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" FontSize="Small" TextColor="White" x:Name="LblHourlyRate"/>
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" FontSize="Small" TextColor="White" x:Name="LblOneLineDescription"/>
+            </Grid>
+            <Grid Margin="5" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.35*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="location.png"/>
+                <Image Grid.Row="1" Grid.Column="0" Source="language.png"/>
+                <Image Grid.Row="2" Grid.Column="0" Source="nationality.png"/>
+                <Image Grid.Row="3" Grid.Column="0" Source="experience.png"/>
+                <Image Grid.Row="4" Grid.Column="0" Source="specialization.png"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="City" TextColor="#030000"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="Language" TextColor="#030000"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="Nationality" TextColor="#030000"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="Experience" TextColor="#030000"/>
+                <Label Grid.Row="4" Grid.Column="1" Text="Specialization" TextColor="#030000"/>
+                <Label Grid.Row="0" Grid.Column="2" TextColor="#030000" x:Name="LblCity"/>
+                <Label Grid.Row="1" Grid.Column="2" TextColor="#030000" x:Name="LblLanguage"/>
+                <Label Grid.Row="2" Grid.Column="2" TextColor="#030000" x:Name="LblNationality"/>
+                <Label Grid.Row="3" Grid.Column="2" TextColor="#030000" x:Name="LblExperience"/>
+                <Label Grid.Row="4" Grid.Column="2" TextColor="#030000" x:Name="LblSpecialization"/>
+            </Grid>
+            <StackLayout Grid.Row="2" Margin="10">
+                <Label TextColor="#FC6B0A" Text="Qualification"/>
+                <ScrollView>
+                    <Label TextColor="#030000" LineBreakMode="WordWrap" x:Name="LblDescription"/>
+                </ScrollView>
+            </StackLayout>
+            <Grid Grid.Row="3" ColumnSpacing="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" BackgroundColor="#340E22" TextColor="White" Text="Call" x:Name="BtnCall" Clicked="BtnCall_OnClicked"/>
+                <Button Grid.Column="1" BackgroundColor="#340E22" TextColor="White" Text="Sms" x:Name="BtnSms" Clicked="BtnSms_OnClicked"/>
+                <Button Grid.Column="2" BackgroundColor="#340E22" TextColor="White" Text="Email" x:Name="BtnEmail" Clicked="BtnEmail_OnClicked"/>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="Teachify.Pages.SearchInstructorPage">
+    <ContentPage.Content>
+        <ListView x:Name="LvInstructors" ItemSelected="LvInstructors_OnItemSelected" SeparatorVisibility="None" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="5" Margin="10" HasShadow="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.33*"/>
+                                    <RowDefinition Height="0.33*"/>
+                                    <RowDefinition Height="0.33*"/>
+                                </Grid.RowDefinitions>
+                                <forms:CachedImage LoadingPlaceholder="placeholder.jpg" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                                   DownsampleToViewSize="true"
+                                                   Source="{Binding FullLogoPath}" CacheType="All">
+                                    <!--  Use this code if you want to create a rounded circle image-->
+                                    <forms:CachedImage.Transformations>
+                                        <transformations:CircleTransformation />
+                                    </forms:CachedImage.Transformations>
+                                </forms:CachedImage>
+                                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
+                                <Label Text="{Binding Experience}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="{Binding CourseDomain}" Grid.Row="2" Grid.Column="1"/>
+                                <Label Text="{Binding HourlyRate}" Grid.Row="0" Grid.Column="2"/>
+                                <Label Text="{Binding City}" Grid.Row="1" Grid.Column="2"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
+
